@@ -1,0 +1,6 @@
+Django==4.0.4
+django-filter==21.1
+django-versatileimagefield==2.2
+djangorestframework==3.13.1
+Markdown==3.3.7
+beautifulsoup4==4.11.1
