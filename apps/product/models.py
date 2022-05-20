@@ -1,6 +1,7 @@
-from versatileimagefield.fields import VersatileImageField
-from apps.core.models import TimeStamp
 from django.db import models
+from versatileimagefield.fields import VersatileImageField
+
+from apps.core.models import TimeStamp
 
 
 class Product(TimeStamp):
