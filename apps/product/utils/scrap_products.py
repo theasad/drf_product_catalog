@@ -122,24 +122,6 @@ def download(image_urls: List[ImageUrlObject], product: Product) -> List[Product
 
 
 def run():
-    # for product_url in PRODUCT_URLS:
-    #     product, created = Product.objects.get_or_create(scrap_url=product_url)
-    #     if created:
-    #         images = scrap_product_images(product_url)
-    #         product_image_object_list = download(images, product)
-    #
-    #         # bulk create
-    #         product.images.bulk_create(
-    #             product_image_object_list,
-    #             batch_size=100,
-    #             ignore_conflicts=True)
-    #
-    #         logger.info(f"{product.id} images downloaded")
-    #
-    #     else:
-    #         logger.warning(f"{product.id} images already downloaded")
-
-    # We can use a with statement to ensure threads are cleaned up promptly
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         # Start the load operations and mark each future with its URL
         future_to_url = {executor.submit(scrap_product_images, url): url for url in PRODUCT_URLS}
@@ -157,9 +139,9 @@ def run():
                         batch_size=100,
                         ignore_conflicts=True)
 
-                    logger.info(f"{product.id} products total {len(product_image_object_list)} image downloaded")
+                    logger.info(f"Product:[{product.id}] total {len(product_image_object_list)} image downloaded")
                 else:
-                    logger.warning(f"{product.id} images already downloaded")
+                    logger.warning(f"Product:[{product.id}] images already downloaded")
             except Exception as exc:
                 logger.warning('%r generated an exception: %s' % (url, exc))
             else:

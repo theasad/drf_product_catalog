@@ -1,4 +1,21 @@
-# Product Catalog API
+# Product Catalog API Documentation
+
+### Product Brand 
+
+* [Aarong](https://aarong.com)
+
+
+### Product URLS
+
+```pycon 
+[
+    'https://www.aarong.com/catalog/product/view/id/656192/s/yellow-half-silk-jamdani-saree/category/233/',
+    'https://www.aarong.com/men/panjabi/black-brush-painted-and-printed-endi-silk-panjabi-15f220220047.html',
+    'https://www.aarong.com/men/panjabi/grey-printed-and-wax-dyed-viscose-cotton-panjabi-15eg210360287.html',
+    'https://www.aarong.com/men/panjabi/blue-grey-printed-and-embroidered-viscose-cotton--slim-fit-panjabi-15e220360145.html'
+
+]
+```
 
 ## Installation Guide
 
@@ -26,13 +43,19 @@
 
        $ python manage.py migrate
 
-### 6. Start the development server:
+**_NOTE: Please choose one of the options 6 and 7_** 
 
-       $ python manage.py runserver
-
-### 7. Start Celery Worker and Beat scheduler:
+### 6. Start Celery Worker and Beat scheduler for downloading the product images
 
        $ celery -A apps.core.celeryconf worker -B -l DEBUG -E
+
+### 7. Run the following command to download the product images
+
+       $  python manage.py scrapProductImage
+
+### 8. Start the development server:
+
+       $ python manage.py runserver
 
 ## API Documentation
 
