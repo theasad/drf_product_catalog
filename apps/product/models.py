@@ -28,7 +28,7 @@ class ProductImage(TimeStamp):
 
     def get_image_upload_path(instance, filename):
         """ This function is used to get the path of the image. """
-        return 'images/%s/%s' % (instance.product.id, filename)
+        return 'catalog/product/%s/%s' % (instance.product.id, filename)
 
     # This field will be used to save the original URL of this image
     scrap_url = models.URLField(max_length=300)
@@ -51,11 +51,16 @@ class ProductImage(TimeStamp):
         width_field='width',
         height_field='height'
     )
+    position = models.PositiveIntegerField(
+        'Position',
+        default=1,
+    )
 
     class Meta:
-        ordering = ('-created_at',)
+        ordering = ('position',)
         verbose_name = 'Image'
         verbose_name_plural = 'Images'
+        unique_together = ('product', 'scrap_url')
         db_table = 'product_images'
 
     def __str__(self):
@@ -65,3 +70,7 @@ class ProductImage(TimeStamp):
         class_ = type(self)
         return '<%s.%s(pk=%r, image=%r)>' % (
             class_.__module__, class_.__name__, self.pk, self.image)
+
+    def create_thumbnail(self, width, height):
+        """ This function is used to create the thumbnail of the image. """
+        return self.image.thumbnail[f'{width}x{height}']

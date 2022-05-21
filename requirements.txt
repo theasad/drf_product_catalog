@@ -4,3 +4,10 @@ django-versatileimagefield==2.2
 djangorestframework==3.13.1
 Markdown==3.3.7
 beautifulsoup4==4.11.1
+celery==5.2.6
+redis==4.3.1
+requests==2.27.1
+fake-useragent==0.1.11
+python-decouple==3.6
+drf-yasg==1.20.0
+

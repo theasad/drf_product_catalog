@@ -1,1 +1,7 @@
+.idea
+.vscode
 db.sqlite3
+media
+__pycache__
+
+celerybeat-schedule

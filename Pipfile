@@ -10,9 +10,17 @@ markdown = "*"
 django-filter = "*"
 django-versatileimagefield = "*"
 beautifulsoup4 = "*"
+requests = "*"
+fake-useragent = "*"
+celery = "*"
+redis = "*"
+django-celery-results = "*"
+python-decouple = "*"
+drf-yasg = "*"
 
 [dev-packages]
 autopep8 = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.8"
