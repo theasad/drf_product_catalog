@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-from apps.product.filters import ImageFilter
+from apps.product.filters import ImageFilter, ImageSizeFilter
 from apps.product.models import ProductImage
 from apps.product.serializers import ImageSerializer
 
