@@ -33,7 +33,7 @@
 ### 3. Go to "**drf_product_catalog**" folder and install dependencies
 
        $ pip install -r requirements.txt # for dependencies
-       $ pip install -r requirements_dev.txt # for development dependencies
+       $ pip install -r requirements_dev.txt -d # for development dependencies
 
 ### 4. Copy the .env.example file to .env and fill in the required values
 

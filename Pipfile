@@ -4,23 +4,23 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-djangorestframework = "*"
-markdown = "*"
-django-filter = "*"
-django-versatileimagefield = "*"
-beautifulsoup4 = "*"
-requests = "*"
-fake-useragent = "*"
-celery = "*"
-redis = "*"
+djangorestframework = "==3.13.1"
+django-filter = "==21.1"
+django-versatileimagefield = "==2.2"
+beautifulsoup4 = "==4.11.1"
+requests = "==2.27.1"
+fake-useragent = "==0.1.11"
+celery = "==5.2.6"
+redis = "==4.3.1"
 django-celery-results = "*"
-python-decouple = "*"
-drf-yasg = "*"
+python-decouple = "==3.6"
+drf-yasg = "==1.20.0"
+Django = "==4.0.4"
+Markdown = "==3.3.7"
 
 [dev-packages]
-autopep8 = "*"
-django-debug-toolbar = "*"
+autopep8 = "==1.6.0"
+django-debug-toolbar = "==3.4.0"
 
 [requires]
 python_version = "3.8"

@@ -19,7 +19,7 @@ class ImageSizeFilter(filters.FilterSet):
 
 class ImageFilter(ImageSizeFilter):
     product_url = filters.CharFilter(
-        field_name='product__scrap_url', label='Scrap URL')
+        field_name='product__scrap_url', label='Product URL')
 
     class Meta:
         model = ProductImage
