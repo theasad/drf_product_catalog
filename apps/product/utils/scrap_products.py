@@ -53,10 +53,9 @@ def scrap_product_images(url: str) -> List:
     script = soup.find("script", text=script_pattern)
     images = []
     if script:
-        match = image_data_pattern.search(script.text)
-        if match:
+        if match := image_data_pattern.search(script.text):
             # remove "data": from the start
-            image_data_str = match.group(0)[7:]
+            image_data_str = match[0][7:]
             images = json.loads(image_data_str)
             images = sorted(images, key=lambda x: int(x['position']))
             images = list(map(lambda x: ImageUrlObject(

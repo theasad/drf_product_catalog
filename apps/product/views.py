@@ -11,8 +11,7 @@ class ImageListView(ListAPIView):
     filter_class = ImageFilter
 
     def get_queryset(self):
-        product_url = self.request.GET.get('product_url')
-        if product_url:
+        if product_url := self.request.GET.get('product_url'):
             return super().get_queryset()
         return super().get_queryset().none()
 
