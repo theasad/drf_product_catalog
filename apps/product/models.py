@@ -26,9 +26,9 @@ class Product(TimeStamp):
 class ProductImage(TimeStamp):
     """ ProductImage model. This model is used to store the images of the products. """
 
-    def get_image_upload_path(instance, filename):
+    def get_image_upload_path(self, filename):
         """ This function is used to get the path of the image. """
-        return 'catalog/product/%s/%s' % (instance.product.id, filename)
+        return f'catalog/product/{self.product.id}/{filename}'
 
     # This field will be used to save the original URL of this image
     scrap_url = models.URLField(max_length=300)

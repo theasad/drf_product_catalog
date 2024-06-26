@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+
 import os
 import sys
 from pathlib import Path
@@ -160,7 +161,7 @@ MEDIA_URL = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CELERY_BROKER_URL = config('CELERY_BROKER_URL')
-CELERY_TASK_ALWAYS_EAGER = False if CELERY_BROKER_URL else True
+CELERY_TASK_ALWAYS_EAGER = not CELERY_BROKER_URL
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
